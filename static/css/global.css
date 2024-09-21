@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+    --background-color: #252525;
+    --primary-color: #2F184B;
+    --secondary-color: #532B88;
+    --tertiary-color: #9b72cf;
+    --quaternary-color: #c8b1e4;
+    --quinary-color: #f4effa;
+    --title-font: 'Inknut Antiqua', sans-serif;
+    --text-font: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+}
+
+.logo{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.logo a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--quinary-color);
+    font-family: var(--title-font);
+    font-size: 1rem;
+
+}
+
+.logo img{
+    width: 80px;
+}
+
+nav{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li{
+    position: relative;
+   
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--quinary-color);
+    font-family: var(--title-font);
+    font-size: 1.3rem;
+    text-wrap: nowrap;
+    font-weight: bold;
+    transition: 1s;
+    
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: 15%; 
+    transition: width 0.5s ease-in-out; 
+    border-radius: 25px;
+} 
+
+nav ul li:hover::after {
+    transition: 0.5s;
+    width: 100%;
+    
+}
+
+nav ul li a:hover{
+    text-shadow: var(--background-color) 4px 4px 25px;
+    color: var(--primary-color);
+    transition: text-shadow 0.3s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+
+@media(1200px <= width <= 1919px) {
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+    .logo a{
+        font-size: 0.8rem;
+    }
+    
+}
+@media(992px <= width <= 1199px) {
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+    .logo a{
+        font-size: 0.7rem;
+    }
+}
+
+@media(768px <= width <= 991px) {
+    nav ul li a {
+        font-size: 1rem;
+    }
+    .logo a{
+        font-size: 0.6rem;
+    }
+}
+
+@media(600px <= width <= 767px) {
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+    .logo a{
+        font-size: 0.5rem;
+    }
+}
+
+@media(376px <= width <= 599px) {
+    nav ul li a {
+        font-size: 0.6rem;
+    }
+    .logo a{
+        font-size: 0rem;
+    }
+}
+
+@media(max-width: 375px) {
+    nav ul li a {
+        font-size: 0.4rem;
+    }
+    .logo a{
+        font-size: 0rem;
+    }
+
+}
