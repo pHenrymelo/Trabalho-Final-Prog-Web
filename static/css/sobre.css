@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+    --background-color: #252525;
+    --primary-color: #2F184B;
+    --secondary-color: #532B88;
+    --tertiary-color: #9b72cf;
+    --quaternary-color: #c8b1e4;
+    --quinary-color: #f4effa;
+    --title-font: 'Inknut Antiqua', sans-serif;
+    --text-font: 'Poppins', sans-serif;
+}
+
+main{
+    width: 45rem;
+    margin-top: 10%;
+    margin-inline: auto;
+    padding: 2.5rem;
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+
+}
+
+main:hover{
+    scale: 1.05;
+    transition: 0.5s;
+    box-shadow: 0px 0px 50px 6px rgba(0, 0, 0, 0.7);
+}
+
+h2{
+    font-family: var(--title-font);
+    font-size: 2rem;
+    text-align: center;
+}
+
+p{
+    font-family: var(--text-font);
+    font-size: 1.1rem;
+    text-align: justify;
+}

@@ -49,6 +49,13 @@ header{
 
 }
 
+.logo a:hover{
+    text-shadow: var(--background-color) 4px 4px 25px;
+    color: var(--primary-color);
+    transition: text-shadow 0.3s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+
 .logo img{
     width: 80px;
 }
@@ -92,7 +99,7 @@ nav ul li::after {
     height: 3px;
     background-color: var(--primary-color);
     left: 0;
-    bottom: 15%; 
+    bottom: -0.2rem; 
     transition: width 0.5s ease-in-out; 
     border-radius: 25px;
 } 

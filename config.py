@@ -2,7 +2,7 @@ from peewee import *
 from database.database import db
 from database.models.forms import Form, Question, Option
 
-from routes.home import home_routes
+from routes.home import home_routes, about
 
 def configure_all(app):
     configure_routes(app)
