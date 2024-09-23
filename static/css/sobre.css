@@ -13,9 +13,9 @@
 
 main{
     width: 45rem;
-    margin-top: 10%;
+    margin-top: 4.5rem;
     margin-inline: auto;
-    padding: 2.5rem;
+    padding: 2rem;
     background-color: var(--secondary-color);
     color: var(--quinary-color);
     border-radius: 20px;
@@ -40,4 +40,54 @@ p{
     font-family: var(--text-font);
     font-size: 1.1rem;
     text-align: justify;
+}
+
+@media(768px <= width <= 991px) {
+    main{
+        width: 40rem;
+    }
+    h2{
+        font-size: 1.8rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+}
+
+@media(600px <= width <= 767px) {
+    main{
+        width: 30rem;
+        
+    }
+    h2{
+        font-size: 1.7rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+}
+
+@media(376px <= width <= 599px) {
+    main{
+        width: 80%;
+    }
+    h2{
+        font-size: 1.6rem;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    
+}
+
+@media(max-width: 375px) {
+    main{
+        width: 80%;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    p{
+        font-size: 0.6rem;
+    }
 }
