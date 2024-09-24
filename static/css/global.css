@@ -9,6 +9,7 @@
     --quinary-color: #f4effa;
     --title-font: 'Inknut Antiqua', sans-serif;
     --text-font: 'Poppins', sans-serif;
+    --cancel-color: #DB1700;
 }
 
 *{
@@ -116,6 +117,42 @@ nav ul li a:hover{
     transition: text-shadow 0.3s ease-in-out;
     transition: color 0.5s ease-in-out;
 }
+
+.confirm{
+    width: 25%;
+    background-color: var(--primary-color);
+    color: var(--quinary-color);
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: solid 2px var(--tertiary-color);
+    font-family: var(--title-font);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+.cancel{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--cancel-color);
+    color: var(--quinary-color);
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: solid 2px var(--tertiary-color);
+    font-family: var(--title-font);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: ease-in-out 0.5s;
+}
+
+.confirm:hover,
+.cancel:hover {
+    scale: 1.05;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.3);
+}
+
 
 @media(1200px <= width <= 1919px) {
 

@@ -15,11 +15,12 @@
             <img src="/static/src/Wizard.png" alt="Mage">
         </div>
         <div class="main-content">
+            <img src="/static/src/logo.png" alt="logo">
             <h2 id="hover-title">Bem vindo ao MagicForms</h2>
             <p>O sistema para criação de formularios dinamicos e personalizados.</p>
             <div class="actions">
-                <a href="" id="btn-createForm">Criar um Formulário</a>
-                <a href="" id="btn-Forms">Ver meus Formulários</a>
+                <a href="{{ url_for('forms.form') }}" id="btn-createForm">Criar um Formulário</a>
+                <a href="{{ url_for('forms.formList') }}" id="btn-Forms">Ver meus Formulários</a>
             </div>
         </div>
         <div class="aside-right">

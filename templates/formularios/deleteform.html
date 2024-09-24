@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/css/deleteform.css">
+{% endblock head %}
+
+{% block title %}
+    MagicForms - Confirmar Deleção
+{% endblock title %}
+
+{% block content %}
+    <main>
+        <h2>Confirmar Deleção?</h2>
+        <p>O formulário: "{{ form_title }}" será deletado permanentemente. Deseja mesmo deletar o formulário?</p>
+        <div class="actions">
+            <button type="submit" class="confirm">Sim, deletar</button>
+            <a href="{{ url_for('forms.formList') }}" class="cancel">Cancelar</a>
+        </div>
+    </main>
+{% endblock content %}

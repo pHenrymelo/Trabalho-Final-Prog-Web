@@ -14,14 +14,14 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/"><img src="/static/src/logo.png" alt="logo"> <h1>MagicForms</h1></a>
+            <a href="{{ url_for('home.index') }}"><img src="/static/src/logo.png" alt="logo"> <h1>MagicForms</h1></a>
         </div>
 
         <nav>
             <ul>
-                <li><a href="#">Criar Formulário</a></li>
-                <li><a href="#">Formulários</a></li>
-                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="{{ url_for('forms.form') }}">Criar Formulário</a></li>
+                <li><a href="{{ url_for('forms.formList') }}">Formulários</a></li>
+                <li><a href="{{ url_for('home.about') }}">Sobre</a></li>
             </ul>
         </nav>
     </header>
