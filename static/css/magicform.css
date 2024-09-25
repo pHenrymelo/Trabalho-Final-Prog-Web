@@ -11,4 +11,204 @@
     --quinary-color: #f4effa;
     --title-font: 'Inknut Antiqua', sans-serif;
     --text-font: 'Poppins', sans-serif;
+    --cancel-color: #DB1700;
+}
+
+main{
+    width: 45rem;
+    margin-top: 4.5rem;
+    margin-inline: auto;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    text-align: center;
+
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--text-font)
+    
+}
+
+.form-header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.form-header img{
+    margin-inline: auto;
+    grid-row: span 2;
+    width: 200px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.input-container input {
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+
+}
+.input-container textarea {
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+    resize: none;
+    
+
+}
+
+#title {
+    font-size: 1.25rem;
+}
+
+#description-container{
+    font-family: var(--text-font);
+    font-size: 0.8rem;
+    grid-row: span 3;
+}
+
+#description{
+    height: 100%;
+}
+
+.form-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+#btn-submit{
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--quinary-color);
+    padding: 0.5rem;
+    border: solid 2px var(--tertiary-color);
+    border-radius: 10px;
+    font-family: var(--title-font);
+    font-size: 1rem;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+#btn-addField {
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+    padding: 0.5rem;
+    border: solid 2px var(--tertiary-color);
+    border-radius: 10px;
+    font-family: var(--title-font);
+    font-size: 1rem;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
+
+#btn-submit:hover,
+#btn-addField:hover {
+    scale: 1.05;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.3);
+}
+
+#btn-submit:active,
+#btn-addField:active {
+    scale: 0.95;
+    transition: 0.1s;
+    box-shadow: 0;
+}
+
+.question-container{
+    width: 100%;
+    margin-block: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+    font-family: var(--text-font);
+}
+
+.question-container input[type="text"]{
+    grid-column: span 3;
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+}
+
+.question-container select{
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+    font-size: 1rem;
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+}
+
+.option-container{
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+
+}
+
+.option-container input[type="text"]{
+    grid-column: span 2;
+}
+
+#btn-add{
+    height: 2.5rem;
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-remove{
+    height: 2.5rem;
+    background-color: var(--cancel-color);
+    color: var(--quinary-color);
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
 }

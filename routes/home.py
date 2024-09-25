@@ -8,4 +8,4 @@ def index():
 
 @home_routes.route('/sobre')
 def about():
-    return render_template('/sobre/sobre.html')
+    return render_template('/about/about.html')

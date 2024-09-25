@@ -88,6 +88,7 @@ main{
 }
 
 #btn-createForm{
+    width: 15rem;
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
@@ -102,6 +103,7 @@ main{
 }
 
 #btn-Forms{
+    width: 15rem;
     display: flex;
     justify-content: center;
     background-color: var(--background-color);
@@ -280,6 +282,7 @@ main{
 
     #btn-createForm,
     #btn-Forms {
+        width: 100%;
         font-size: 0.7rem;
 
     }

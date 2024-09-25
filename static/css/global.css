@@ -34,6 +34,14 @@ header{
     color: var(--quinary-color);
 }
 
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-block: 5rem;
+    font-family: var(--title-font);
+}
+
 .logo{
     width: 30%;
     display: flex;

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/css/magicform.css">
+{% endblock head %}
+
+{% block title %}
+    MagicForms - Form
+{% endblock title %}
+
+{% block content %}
+    <main>
+        <h2>Formulário</h2>
+        <form action="" id="magicform">
+
+            <div class="form-header">
+                <div class="input-container">
+                    <label for="title">Titulo:</label>
+                    <input type="text" name="title" id="title">
+                </div>
+    
+                <div class="input-container" id="description-container">
+                    <label for="description">Descrição:</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+
+                <img src="/static/src/logo.png" alt="logo">
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" value="Enviar" id="btn-submit">
+                <input type="button" value="Adicionar Campo" id="btn-addField">
+            </div>
+        </form>
+    </main>
+{% endblock content %}

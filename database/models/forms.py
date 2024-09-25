@@ -11,7 +11,7 @@ class Form(BaseModel):
     
 class Question(BaseModel):
     form = ForeignKeyField(Form, backref='questions')
-    question_statemant = TextField()
+    question_statement = TextField()
     question_type = CharField(max_length=20)
     
 class Option(BaseModel):
