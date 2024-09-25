@@ -12,3 +12,98 @@
     --title-font: 'Inknut Antiqua', sans-serif;
     --text-font: 'Poppins', sans-serif;
 }
+
+main{
+    width: 85rem;
+    margin-block: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: auto;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-size: 2rem;
+}
+
+.form-list-placeholder{
+    width: 90%;
+    margin-inline: auto;
+    margin-block: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(1, auto);
+    justify-items: center;
+    align-items: center;
+    background-color: var(--background-color);
+    height: 5rem;
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 10px;
+    font-family: var(--title-font);
+    font-size: 1rem;
+}
+
+#form-id-placeholder,
+#form-id{
+    grid-column: span 1;
+}
+
+#form-desc-placeholder,
+#form-desc{
+    grid-column: span 3;
+}
+
+.form-list-placeholder h3,
+.list-item-form p,
+.form-options{
+    grid-column: span 2;
+}
+
+.list-item-form{
+    width: 90%;
+    margin-inline: auto;
+    margin-block: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(1, auto);
+    justify-items: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    height: 5rem;
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 10px;
+    font-family: var(--text-font);
+    font-size: 1rem;
+}
+
+.list-item-form{
+    text-wrap: wrap;
+}
+
+.form-options{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-options a:hover {
+    filter: drop-shadow(3px 3px 25px rgba(0, 0, 0, 0.5));
+    scale: 1.1;
+    transition: ease-in-out 0.5s;
+}
+
+#form-list{
+    width: 100%;
+}
+
+#form-desc{
+    font-size: 0.6rem;
+    overflow: auto;
+}

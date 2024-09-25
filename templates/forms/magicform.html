@@ -10,27 +10,58 @@
 
 {% block content %}
     <main>
-        <h2>Formulário</h2>
-        <form action="" id="magicform">
 
-            <div class="form-header">
-                <div class="input-container">
-                    <label for="title">Titulo:</label>
-                    <input type="text" name="title" id="title">
+        {% if form %}
+            <h2 id="form-title" data-id="{{form.id}}">{{form.form_title}}</h2>
+
+            <form action="" id="magicform">
+
+                <div class="form-header">
+                    <div class="input-container">
+                        <label for="title">Titulo:</label>
+                        <input type="text" name="title" id="title" value="{{form.form_title}}" required>
+                    </div>
+        
+                    <div class="input-container" id="description-container">
+                        <label for="description">Descrição:</label>
+                        <textarea name="description" id="description">{{form.form_description}}</textarea>
+                    </div>
+                    
+                    <img src="/static/src/logo.png" alt="logo">
                 </div>
     
-                <div class="input-container" id="description-container">
-                    <label for="description">Descrição:</label>
-                    <textarea name="description" id="description"></textarea>
+                <div class="form-actions">
+                    <input type="submit" value="Enviar" id="btn-submit">
+                    <input type="button" value="Adicionar Campo" id="btn-addField">
                 </div>
+            </form>
 
-                <img src="/static/src/logo.png" alt="logo">
-            </div>
+        {% else %}
+            <h2>Criar Formulário</h2>
+            <form action="" id="magicform">
 
-            <div class="form-actions">
-                <input type="submit" value="Enviar" id="btn-submit">
-                <input type="button" value="Adicionar Campo" id="btn-addField">
-            </div>
-        </form>
+                <div class="form-header">
+                    <div class="input-container">
+                        <label for="title">Titulo:</label>
+                        <input type="text" name="title" id="title" required>
+                    </div>
+        
+                    <div class="input-container" id="description-container">
+                        <label for="description">Descrição:</label>
+                        <textarea name="description" id="description" ></textarea>
+                    </div>
+    
+                    <img src="/static/src/logo.png" alt="logo">
+                </div>
+    
+                <div class="form-actions">
+                    <input type="submit" value="Enviar" id="btn-submit">
+                    <input type="button" value="Adicionar Campo" id="btn-addField">
+                </div>
+            </form>
+    
+        {% endif %}
+
+        
     </main>
 {% endblock content %}
