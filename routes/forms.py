@@ -104,9 +104,20 @@ def  edit_option(id):
     
 @forms_routes.route('/formulario/<int:id>/delete', methods=['GET', 'DELETE'])
 def delete(id):
-    if request.method == 'DELETE':
+    try:
         form = Form.get_by_id(id)
-        form.delete_instance()
-        return jsonify({'status': 'Formulario deletado com sucesso'}), 200
-    else:
-        return render_template('/forms/deleteform.html', form_id=id)
+        if request.method == 'DELETE':
+            for question in form.questions:
+                for option in question.options:
+                    option.delete_instance()
+                question.delete_instance()
+            form.delete_instance()
+            return jsonify({'status': 'Formulario deletado com sucesso'}), 200
+        else:
+            return render_template('/forms/deleteform.html', form=form)
+        
+    except DoesNotExist:
+        return jsonify({'error': 'Formulario não encontrado'}), 404
+    
+    except Exception as e:
+        return jsonify({'error': f'Erro ao deletar formulario: {str(e)}'}), 500

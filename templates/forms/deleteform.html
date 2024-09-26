@@ -2,6 +2,7 @@
 
 {% block head %}
     <link rel="stylesheet" href="/static/css/deleteform.css">
+    <script src="/static/js/delete.js" defer></script>
 {% endblock head %}
 
 {% block title %}
@@ -10,11 +11,16 @@
 
 {% block content %}
     <main>
-        <h2>Confirmar Deleção?</h2>
-        <p>O formulário: "{{ form_title }}" será deletado permanentemente. Deseja mesmo deletar o formulário?</p>
-        <div class="actions">
+        {% if form %}
+        <h2 id="form-title" data-id="{{form.id}}"> Confirmar Deleção de {{form.form_title}} ?</h2>
+        <p>O formulário: "{{ form.form_title }}" será deletado permanentemente. Deseja mesmo deletar o formulário?</p>
+        <form class="actions">
             <button type="submit" class="confirm">Sim, deletar</button>
             <a href="{{ url_for('forms.formList') }}" class="cancel">Cancelar</a>
-        </div>
+        </form>
+        {% else %}
+            <h2>Formulário não encontrado</h2>
+            <p>O formulário não foi encontrado, por favor, tente novamente.</p>
+        {% endif %}
     </main>
 {% endblock content %}
