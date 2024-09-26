@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/css/formlist.css">
+{% endblock head %}
+
+{% block title %}
+    MagicForms - Formularios
+{% endblock title %}
+
+{% block content %}
+    <main>
+        <h2>Formularios</h2>
+
+        <div class="form-list-placeholder">
+            <h3 id='form-id-placeholder'>#</h3>
+        
+            <h3 class="content-field-header">Titulo</h3>
+            <h3 class="content-field-header" id='form-desc-placeholder'>Descrição</h3>
+          
+            <h3>Ações</h3>
+        </div>
+
+        <div id="form-list">
+
+            {% for form in forms %}
+
+            <div class="list-item-form">
+                
+                <p id="form-id">{{form.id}}</p>
+                <p class="content-field">{{form.form_title}}</p>
+                <p class="content-field" id="form-desc">{{form.form_description}}</p>
+
+                <div class="form-options">
+
+                    <a href=""><img src="/static/src/informacoes.png" alt="info"></a>
+                    <a href="{{url_for('forms.edit', id=form.id)}}"><img src="/static/src/lapis.png" alt="edit"></a>
+                    <a href="{{url_for('forms.delete', id=form.id)}}"><img src="/static/src/lixo.png" alt="delete"></a>
+
+                </div>
+
+            </div>
+        {% endfor %}
+
+
+        </div>
+
+    </main>
+{% endblock content %}
