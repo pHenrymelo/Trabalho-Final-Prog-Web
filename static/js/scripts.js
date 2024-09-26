@@ -85,10 +85,11 @@ const addField = () => {
 }
 
 const createOptionField = (questionField) => {
+
+    const questionOptions = questionField.querySelector('.option-container');
+
     const optionField = document.createElement('div');
     optionField.classList.add('option-field');
-
-    
 
     const optionText = document.createElement('input');
     optionText.type = 'text';
@@ -104,8 +105,7 @@ const createOptionField = (questionField) => {
 
     optionField.appendChild(optionText);
     optionField.appendChild(btnRemoveOption);
-    questionField.appendChild(optionField);
-
+    questionOptions.appendChild(optionField);
 }
 
 btnAddField.addEventListener('click', () => {
@@ -150,11 +150,11 @@ selectionBoxes.forEach(box => {
 });
 
     document.querySelectorAll('.question-container').forEach(question => {
-
         const questionOptions = question.querySelector('.option-container');
         const btnAddOption = question.querySelector('.btn-add');
+        const selectionBox = question.querySelector('.questionType-selector');
 
-        if (question.value === 'multipleChoice' || question.value === 'selection'){
+        if (selectionBox.value === 'multipleChoice' || selectionBox.value === 'selection'){
             btnAddOption.style.display = 'block';
             questionOptions.style.display = 'block';
         } else {
