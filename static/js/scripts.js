@@ -3,7 +3,7 @@ formContainer = document.getElementById('magicform')
 formActions = document.querySelector('.form-actions')
 btnSubmit = document.getElementById('btn-submit')
 btnAddField = document.getElementById('btn-addField')
-btnsAddQuestion = document.querySelectorAll('.btn-add')
+btnsAddOptions = document.querySelectorAll('.btn-add')
 btnsRemoveQuestion = document.querySelectorAll('.btn-remove')
 btnsRemoveOption = document.querySelectorAll('.btn-remove-option')
 selectionBoxes = document.querySelectorAll('.questionType-selector')
@@ -42,7 +42,7 @@ const addField = () => {
     btnAddOption.value = 'Adicionar Alternativa';
     btnAddOption.id = 'btn-add'
     btnAddOption.addEventListener('click', () => {
-        createOptionField(questionOptions)
+        createOptionField(questionOptions.parentElement)
     });
 
     const btnRemoveQuest = document.createElement('input');
@@ -114,7 +114,7 @@ btnAddField.addEventListener('click', () => {
     
 });
 
-btnsAddQuestion.forEach(btn => {
+btnsAddOptions.forEach(btn => {
     btn.addEventListener('click', () => {
         createOptionField(btn.parentElement);
     })
