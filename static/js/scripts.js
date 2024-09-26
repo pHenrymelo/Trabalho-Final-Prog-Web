@@ -64,6 +64,9 @@ const addField = () => {
         }
     });
 
+    
+    
+
     questionField.appendChild(questionStatement);
     questionField.appendChild(questionType);
     questionField.appendChild(btnAddOption);
@@ -146,7 +149,20 @@ selectionBoxes.forEach(box => {
     })
 });
 
+    document.querySelectorAll('.question-container').forEach(question => {
 
+        const questionOptions = question.querySelector('.option-container');
+        const btnAddOption = question.querySelector('.btn-add');
+
+        if (question.value === 'multipleChoice' || question.value === 'selection'){
+            btnAddOption.style.display = 'block';
+            questionOptions.style.display = 'block';
+        } else {
+            btnAddOption.style.display = 'none';
+            questionOptions.style.display = 'none';
+            questionOptions.innerHTML = '';
+        }
+    });
 
 formContainer.addEventListener('submit', function(e) {
     e.preventDefault();
