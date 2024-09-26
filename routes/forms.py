@@ -47,6 +47,12 @@ def details(id):
 def edit(id):
     try:
         form = Form.get_by_id(id)
+        questions = Question.select().where(Question.form == form)
+        form.questions = questions
+        print(questions)
+        options = Option.select().where(Option.question_id.in_(questions))
+        print(options)
+        
     except DoesNotExist:
         return jsonify({'error': 'Formulario não encontrado'}), 404
     
@@ -76,7 +82,8 @@ def edit(id):
         except Exception as e:
             return jsonify({'error': str(e)}), 400
     else:
-        return render_template('/forms/magicform.html', form=model_to_dict(form, recurse=True))
+        form_dict = model_to_dict(form, recurse=True)
+        return render_template('/forms/magicform.html', form= form_dict, questions=form.questions)
 
 @forms_routes.route('/perguntas/<int:id>', methods=['PUT'])
 def edit_question(id):

@@ -14,7 +14,7 @@
         {% if form %}
             <h2 id="form-title" data-id="{{form.id}}">{{form.form_title}}</h2>
 
-            <form action="" id="magicform">
+            <form id="magicform">
 
                 <div class="form-header">
                     <div class="input-container">
@@ -29,13 +29,40 @@
                     
                     <img src="/static/src/logo.png" alt="logo">
                 </div>
-    
+                
+
+                {% for question in questions %}
+                
+                    <div class="question-container" data-question-id="{{question.id}}">
+                        <input type="text" id="questionStatement_{{question.id}}" name="questionStatement_{{question.id}}" value="{{question.question_statement}}" required>
+                        <select class="questionType-selector" name="questionType_{{question.id}}" id="questionType_{{question.id}}" required>
+                            <option value="short" {% if question.question_type == 'short' %} selected {% endif %}>Resposta Curta</option>
+                            <option value="long" {% if question.question_type == 'long' %} selected {% endif %}>Resposta Longa</option>
+                            <option value="multipleChoice" {% if question.question_type == 'multipleChoice' %} selected {% endif %}>Múltipla Escolha</option>
+                            <option value="selection" {% if question.question_type == 'selection' %} selected {% endif %}>Caixa de Seleção</option>
+                        </select>
+
+                        <input type="button" class="btn-add" value="Adicionar Alternativa" id="btn-add">
+                        <input type="button" class="btn-remove" value="Remover Questão" id="btn-remove">
+
+                        <div class="option-container" >
+                            {% for option in question.options %}
+                            <div class="option-field" id="questionOptions_{{question.id}}">
+                                <input type="text" name="optionText_{{option.id}}" value="{{option.option_text}}">
+                                <input type="button" class="btn-remove-option" value="Remover alternativa" id="btn-remove">
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                {% endfor %}
+
                 <div class="form-actions">
                     <input type="submit" value="Enviar" id="btn-submit">
                     <input type="button" value="Adicionar Campo" id="btn-addField">
                 </div>
             </form>
-
+                
         {% else %}
             <h2>Criar Formulário</h2>
             <form action="" id="magicform">

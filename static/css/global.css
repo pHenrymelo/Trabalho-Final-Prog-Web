@@ -55,6 +55,7 @@ footer{
     color: var(--quinary-color);
     font-family: var(--title-font);
     font-size: 1rem;
+    transition: color 0.5s ease-in-out;
 
 }
 

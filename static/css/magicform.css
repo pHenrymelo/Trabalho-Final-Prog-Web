@@ -184,15 +184,21 @@ form{
 
 .option-container{
     grid-column: span 3;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
 
 }
 
 .option-container input[type="text"]{
     grid-column: span 2;
+}
+
+.option-field{
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
 }
 
 #btn-add{

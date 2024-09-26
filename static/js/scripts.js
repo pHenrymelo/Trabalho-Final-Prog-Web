@@ -3,6 +3,10 @@ formContainer = document.getElementById('magicform')
 formActions = document.querySelector('.form-actions')
 btnSubmit = document.getElementById('btn-submit')
 btnAddField = document.getElementById('btn-addField')
+btnsAddQuestion = document.querySelectorAll('.btn-add')
+btnsRemoveQuestion = document.querySelectorAll('.btn-remove')
+btnsRemoveOption = document.querySelectorAll('.btn-remove-option')
+selectionBoxes = document.querySelectorAll('.questionType-selector')
 
 let questionCount = 0;
 
@@ -25,7 +29,7 @@ const addField = () => {
     questionType.innerHTML = `
         <option value="short">Resposta Curta</option>
         <option value="long">Resposta Longa</option>
-        <option value="multipleChoice">Múltipla Escolha</option>
+        <option value="multipleChoice" selected>Múltipla Escolha</option>
         <option value="selection">Caixa de Seleção</option>
     `
 
@@ -64,7 +68,14 @@ const addField = () => {
     questionField.appendChild(questionType);
     questionField.appendChild(btnAddOption);
     questionField.appendChild(btnRemoveQuest);
-    questionField.appendChild(questionOptions);
+    questionField.appendChild(questionOptions)
+
+    const reactFieald = (e) => {
+        selectReactionQuestionType(questionField);
+    }
+
+    questionType.addEventListener('change', reactFieald);
+
 
     questionCount++;
     return questionField;
@@ -72,7 +83,9 @@ const addField = () => {
 
 const createOptionField = (questionField) => {
     const optionField = document.createElement('div');
-    optionField.classList.add('option-container');
+    optionField.classList.add('option-field');
+
+    
 
     const optionText = document.createElement('input');
     optionText.type = 'text';
@@ -97,6 +110,42 @@ btnAddField.addEventListener('click', () => {
     formContainer.insertBefore(newField, formActions);
     
 });
+
+btnsAddQuestion.forEach(btn => {
+    btn.addEventListener('click', () => {
+        createOptionField(btn.parentElement);
+    })
+});
+
+btnsRemoveQuestion.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.parentElement.remove();
+    })
+});
+
+btnsRemoveOption.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.parentElement.remove();
+    })
+});
+
+selectionBoxes.forEach(box => {
+    box.addEventListener('change', () => {
+
+        const questionOptions = box.parentElement.querySelector('.option-container');
+        const btnAddOption = box.parentElement.querySelector('.btn-add');
+
+        if (box.value === 'multipleChoice' || box.value === 'selection'){
+            btnAddOption.style.display = 'block';
+            questionOptions.style.display = 'block';
+        } else {
+            btnAddOption.style.display = 'none';
+            questionOptions.style.display = 'none';
+            questionOptions.innerHTML = '';
+        }
+    })
+});
+
 
 
 formContainer.addEventListener('submit', function(e) {
