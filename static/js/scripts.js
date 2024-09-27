@@ -94,6 +94,7 @@ const createOptionField = (questionField) => {
     const optionText = document.createElement('input');
     optionText.type = 'text';
     optionText.placeholder = 'O conteudo da alternativa vai aqui...';
+    optionText.required = true;
 
     const btnRemoveOption = document.createElement('input');
     btnRemoveOption.type = 'button';

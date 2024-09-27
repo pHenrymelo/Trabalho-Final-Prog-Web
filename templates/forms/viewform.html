@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/static/css/formlist.css">
+    <link rel="stylesheet" href="/static/css/viewform.css">
 {% endblock head %}
 
 {% block title %}
@@ -10,6 +10,60 @@
 
 {% block content %}
     <main>
-        
+
+        {% if form %}
+
+        <h2>{{form.form_title}}</h2>
+        <p>{{form.form_description}}</p>
+
+        <form >
+
+            {% for question in questions %}
+                {% if question.question_type == 'short' %}
+                <div class="form-question-container">
+                    <label for="questionStatement_{{question.id}}">{{question.question_statement}}</label>
+                    <input type="text" name="" id="short-question">
+                </div>
+
+                {% elif question.question_type == 'long' %}
+                <div class="form-question-container">
+                    <label for="questionStatement_{{question.id}}">{{question.question_statement}}</label>
+                    <input type="text" name="" id="long-question">
+                </div>
+
+                {% elif question.question_type == 'multipleChoice' %}
+                <div class="form-question-container">
+                    <label for="questionStatement_{{question.id}}">{{question.question_statement}}</label>
+
+                    <div class="option-container">
+                        {% for option in question.options %}
+                        <div class="option-field">
+                            <input type="radio" name="{{question.id}}_option" value="{{option.option_text}}">
+                            <label for="optionText_{{option.id}}">{{option.option_text}}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {% elif question.question_type == 'selection' %}
+                <div class="form-question-container">
+                    <label for="questionStatement_{{question.id}}">{{question.question_statement}}</label>
+
+                    <div class="option-container">
+                        {% for option in question.options %}
+                            <div class="option-field">
+                                <input type="checkbox" name="optionText_{{option.id}}" value="{{option.option_text}}">
+                                <label for="optionText_{{option.id}}">{{option.option_text}}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {%endif%}
+
+            {%endfor%}
+
+        </form>
+        {% endif %}
     </main>
 {% endblock content %}

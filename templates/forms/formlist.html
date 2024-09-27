@@ -33,7 +33,7 @@
 
                 <div class="form-options">
 
-                    <a href=""><img src="/static/src/informacoes.png" alt="info"></a>
+                    <a href="{{ url_for('forms.details', id=form.id)}}"><img src="/static/src/informacoes.png" alt="info"></a>
                     <a href="{{url_for('forms.edit', id=form.id)}}"><img src="/static/src/lapis.png" alt="edit"></a>
                     <a href="{{url_for('forms.delete', id=form.id)}}"><img src="/static/src/lixo.png" alt="delete"></a>
 
