@@ -75,3 +75,62 @@ form{
     border-radius: 5px;
     padding: 1rem;
 }
+
+@media(1200px <= width <= 1919px) {
+    
+
+}
+@media(992px <= width <= 1199px) {
+    
+}
+
+@media(768px <= width <= 991px) {
+    main{
+        width: 45rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    .form-options img{
+        width: 1.4rem;
+    }
+}
+
+@media(600px <= width <= 767px) {
+    main{
+        width: 35rem;
+    }
+
+    p{
+        font-size: 0.8rem;
+    }
+
+    .form-options img{
+        width: 1.3rem;
+    }
+
+}
+
+@media(376px <= width <= 599px) {
+    main{
+        width: 90%;
+    }
+    p{
+        font-size: 0.6rem;
+    }
+    .form-options img{
+        width: 1.2rem;
+    }
+}
+
+@media(max-width: 375px) {
+    main{
+        width: 800%;
+    }
+    p{
+        font-size: 0.4rem;
+    }
+    .form-options img{
+        width: 1.1rem;
+    }
+}

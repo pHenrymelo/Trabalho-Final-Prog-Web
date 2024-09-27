@@ -34,7 +34,7 @@
                 {% for question in questions %}
                 
                     <div class="question-container" data-question-id="{{question.id}}">
-                        <input type="text" id="questionStatement_{{question.id}}" name="questionStatement_{{question.id}}" value="{{question.question_statement}}" required>
+                        <input type="text" id="questionStatement_{{question.id}}" name="questionStatement_{{question.id}}" value="{{question.question_statement}}" required maxlength="200">
                         <select class="questionType-selector" name="questionType_{{question.id}}" id="questionType_{{question.id}}" required>
                             <option value="short" {% if question.question_type == 'short' %} selected {% endif %}>Resposta Curta</option>
                             <option value="long" {% if question.question_type == 'long' %} selected {% endif %}>Resposta Longa</option>

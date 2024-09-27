@@ -21,6 +21,7 @@ const addField = () => {
     questionStatement.placeholder = 'O enunciado da pergunta vai aqui...'
     questionStatement.name = `questionStatement_${questionCount}`
     questionStatement.required = true;
+    questionStatement.maxLength = 200;
 
     const questionType = document.createElement('select');
     questionType.classList.add('questionType-selector')
