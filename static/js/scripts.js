@@ -21,6 +21,7 @@ const addField = () => {
     questionStatement.placeholder = 'O enunciado da pergunta vai aqui...'
     questionStatement.name = `questionStatement_${questionCount}`
     questionStatement.required = true;
+    questionStatement.maxLength = 200;
 
     const questionType = document.createElement('select');
     questionType.classList.add('questionType-selector')
@@ -94,6 +95,7 @@ const createOptionField = (questionField) => {
     const optionText = document.createElement('input');
     optionText.type = 'text';
     optionText.placeholder = 'O conteudo da alternativa vai aqui...';
+    optionText.required = true;
 
     const btnRemoveOption = document.createElement('input');
     btnRemoveOption.type = 'button';

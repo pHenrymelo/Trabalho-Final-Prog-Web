@@ -12,3 +12,125 @@
     --title-font: 'Inknut Antiqua', sans-serif;
     --text-font: 'Poppins', sans-serif;
 }
+
+main{
+    width: 45rem;
+    margin-top: 4.5rem;
+    margin-inline: auto;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    text-align: center;
+
+}
+p{
+    font-family: var(--text-font);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--text-font);
+    margin-block: 2rem;
+}
+
+.form-question-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-question-container input[type="text"]{
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    color: var(--quinary-color);
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.form-question-container label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.option-container{
+    background-color: var(--background-color);
+    border: var(--tertiary-color) solid 2px;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+@media(1200px <= width <= 1919px) {
+    
+
+}
+@media(992px <= width <= 1199px) {
+    
+}
+
+@media(768px <= width <= 991px) {
+    main{
+        width: 45rem;
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    .form-options img{
+        width: 1.4rem;
+    }
+}
+
+@media(600px <= width <= 767px) {
+    main{
+        width: 35rem;
+    }
+
+    p{
+        font-size: 0.8rem;
+    }
+
+    .form-options img{
+        width: 1.3rem;
+    }
+
+}
+
+@media(376px <= width <= 599px) {
+    main{
+        width: 90%;
+    }
+    p{
+        font-size: 0.6rem;
+    }
+    .form-options img{
+        width: 1.2rem;
+    }
+}
+
+@media(max-width: 375px) {
+    main{
+        width: 800%;
+    }
+    p{
+        font-size: 0.4rem;
+    }
+    .form-options img{
+        width: 1.1rem;
+    }
+}

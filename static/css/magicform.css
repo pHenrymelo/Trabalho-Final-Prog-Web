@@ -222,3 +222,50 @@ form{
     border-radius: 5px;
     cursor: pointer;
 }
+
+@media(1200px <= width <= 1919px) {
+
+    
+    
+}
+@media(992px <= width <= 1199px) {
+    
+}
+
+@media(768px <= width <= 991px) {
+    
+}
+
+@media(600px <= width <= 767px) {
+    main{
+        width: 30rem;
+    }
+    .form-header {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
+
+@media(376px <= width <= 599px) {
+    main{
+        width: 90%;
+    }
+    .form-header {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .question-container{
+        width: 115%;
+    }
+}
+
+@media(max-width: 375px) {
+    main{
+        width: 80%;
+    }
+    .form-header {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .question-container{
+        width: 115%;
+    }
+}

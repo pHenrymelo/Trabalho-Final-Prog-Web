@@ -39,9 +39,14 @@ def form():
 
 @forms_routes.route('/formulario/<int:id>', methods=['GET'])
 def details(id):
-    form = Form.get_by_id(id)
-    form = model_to_dict(form)
-    return render_template('/forms/viewform.html', form=form)
+    try:
+        form = Form.get_by_id(id)
+        questions = Question.select().where(Question.form == form)
+        form_dict = model_to_dict(form, recurse=True)
+    except DoesNotExist:
+        return jsonify({'error': 'Formulario não encontrado'}), 404
+    
+    return render_template('/forms/viewform.html', form=form_dict, questions=questions)
 
 @forms_routes.route('/formulario/<int:id>/editar', methods=['GET', 'PUT'])
 def edit(id):
@@ -49,9 +54,7 @@ def edit(id):
         form = Form.get_by_id(id)
         questions = Question.select().where(Question.form == form)
         form.questions = questions
-        print(questions)
         options = Option.select().where(Option.question_id.in_(questions))
-        print(options)
         
     except DoesNotExist:
         return jsonify({'error': 'Formulario não encontrado'}), 404
